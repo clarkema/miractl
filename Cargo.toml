@@ -1,0 +1,15 @@
+[package]
+name = "miractl"
+version = "0.1.0"
+edition = "2021"
+authors = ["Mike Clarke <clarkema@clarkema.org>"]
+description = "Library and CLI utility to control Boox Mira e-ink montiors"
+homepage = "http://github.com/clarkema/miractl"
+repository = "http://github.com/clarkema/miractl"
+license = "GPL-3.0-only"
+
+[dependencies]
+bincode = "1.3.3"
+clap = { version = "4.1.6", features = ["derive"] }
+hidapi = "2.1.3"
+serde = { version = "1.0.152", features =  ["derive"] }
