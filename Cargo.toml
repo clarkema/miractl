@@ -13,3 +13,9 @@ bincode = "1.3.3"
 clap = { version = "4.1.6", features = ["derive"] }
 hidapi = "2.1.3"
 serde = { version = "1.0.152", features =  ["derive"] }
+
+[profile.release]
+strip = true
+lto = true
+opt-level = "z"
+codegen-units = 1
