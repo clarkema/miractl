@@ -140,3 +140,17 @@ udevadm control --reload-rules && udevadm trigger
 
 The core of the USB interface was based on knowledge from
 https://github.com/ipodnerd3019/mira-js.
+
+## Alternatives
+
+<dl>
+  <dt>[mira-js](https://github.com/ipodnerd3019/mira-js)</dt>
+  <dd>
+    The original implementation in JavaScript.
+  </dd>
+
+  <dt>[miractl](https://git.sr.ht/~elithper/miractl/tree/main/item/miractl.py)</dt>
+  <dd>
+    A port of mira-js implemented as a standalone Python script.
+  </dd>
+</dl>
