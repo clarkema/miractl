@@ -148,6 +148,6 @@ https://github.com/ipodnerd3019/mira-js.
    The original implementation in JavaScript.
 
 
- - [miractl](https://git.sr.ht/~elithper/miractl/tree/main/item/miractl.py)
+ - [miractl](https://git.sr.ht/~elithper/miractl)
 
    A port of mira-js implemented as a standalone Python script.
