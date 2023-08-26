@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Mike Clarke <clarkema@clarkema.org>"]
 description = "Library and CLI utility to control Boox Mira e-ink montiors"
-homepage = "http://github.com/clarkema/miractl"
-repository = "http://github.com/clarkema/miractl"
+homepage = "https://github.com/clarkema/miractl"
+repository = "https://github.com/clarkema/miractl"
 license = "GPL-3.0-only"
 
 [dependencies]
