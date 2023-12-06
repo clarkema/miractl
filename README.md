@@ -4,6 +4,8 @@ _miractl_ is a utility to manage Boox Mira and Mira Pro e-ink displays.
 
 ## Installation
 
+### Generic
+
 Currently there are no pre-built binaries available. You’ll need a [Rust
 toolchain](https://rustup.rs/) installed, then from the repository root you can
 run:
@@ -14,6 +16,33 @@ $ cargo build --release
 
 Then just copy `target/release/miractl` to somewhere in your path.  On Linux you
 will also need appropriate udev rules; see below.
+
+### Nix
+
+_miractl_ is available as a Nix flake.  You can install it on NixOS with
+something like the follwing in `/etc/nixos/configuration.nix`:
+
+``` nix
+let
+  miractl = (builtins.getFlake "github:clarkema/miractl").defaultPackage.${builtins.currentSystem};
+in
+{
+  ...
+  environment.systemPackages = [
+    ...
+    miractl
+    ...
+  ];
+
+  services.udev.packages = [ miractl ];
+  ...
+}
+```
+
+If you want to install it as a user via `home-manager`, or using `nixpkgs` on a
+non-NixOS system, you’ll have to take care of appropriate udev rules yourself.
+See `dist/nix/10-miractl.rules` for the rules used by the flake, or below for
+generic rules for other systems.
 
 ## Usage
 
