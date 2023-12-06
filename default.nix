@@ -17,6 +17,6 @@ in
 
     postInstall = ''
       mkdir -p $out/etc/udev/rules.d
-      cp os_support/10-miractl.rules $out/etc/udev/rules.d/10-miractl.rules
+      cp dist/nix/10-miractl.rules $out/etc/udev/rules.d/10-miractl.rules
     '';
   }
