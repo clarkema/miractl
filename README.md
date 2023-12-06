@@ -66,6 +66,18 @@ $ miractl mode read
 $ miractl mode speed
 ```
 
+Detect whether a display is connected:
+
+```bash
+$ miractl detect
+$ echo $?
+0 # or 1 if no display
+```
+
+The `detect` subcommand is intended for use in scripts that need to change
+their behaviour depending on whether there is an e-ink display attached or not.
+It just exits successfully if it could find and connect to a display.
+
 ### Parameters
 
 <dl>

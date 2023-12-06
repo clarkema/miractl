@@ -14,6 +14,9 @@ struct Cli {
 
 #[derive(Debug, Subcommand)]
 enum Commands {
+    /// Detect a connected display
+    Detect {},
+
     /// Refresh the display
     Refresh {},
 
@@ -109,6 +112,10 @@ fn main() {
     let cli = Cli::parse();
     match Mira::new() {
         Ok(mira) => match &cli.command {
+            Commands::Detect{} => {
+                // Nothing to do here, just exit with 0 to indicate we found
+                // and could connect to a monitor
+            }
             Commands::Refresh {} => {
                 mira.refresh().unwrap();
             }
@@ -164,7 +171,14 @@ fn main() {
             }
         },
         Err(e) => {
-            eprintln!("Error: {e}");
+            match &cli.command {
+                Commands::Detect{} => {
+                    std::process::exit(1);
+                }
+                _ => {
+                    eprintln!("Error: {e}");
+                }
+            }
         }
     }
 }
